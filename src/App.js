@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import data from './data/my-info.json';
+import Header from './components/Header.js';
+import Address from './components/Address.js';
+import Skills from './components/Skills.js';
+import Objective from './components/Objective.js';
+import Education from './components/Education.js';
+import Experience from './components/Experience.js';
+import Projects from './components/Projects.js';
 
 function App() {
+  const person = useState(data)[0];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div id="header" className="row border-bottom border-dark">
+      <Address address={person.address} />
+      <Header name={person.name} email={person.email}/>
     </div>
+    <Skills {...person.skills}/>
+    <Objective quote={person.objective} />
+    <Education schools={person.education} />
+    <Experience companies={person.experience} />
+    <Projects projects={person.project} />
+    </>
   );
 }
 
