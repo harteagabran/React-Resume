@@ -7,7 +7,7 @@ export default function Skills({front, back}) {
         <div>
         <Section title="Skills"/>
         <p className="text-gray text-center mb-0">{backEnd}</p>
-        <p className="text-gray text-center">{frontEnd}</p>
+        <p className="text-gray text-center mb-0">{frontEnd}</p>
         </div>
     )
     
